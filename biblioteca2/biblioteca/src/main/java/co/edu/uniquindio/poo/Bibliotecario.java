@@ -53,4 +53,13 @@ public class Bibliotecario extends Persona {
         throw new UnsupportedOperationException("Unimplemented method 'add'");
     }
 
+     /*
+   * Método que permite calcular la bonificacion del bibliotecario
+   */
+    public double calcularBonificacion(){
+        int anosAntiguedad = LocalDate.now().getYear() - fechaIngreso.getYear();
+        return salario * 0.02 * anosAntiguedad;
+
+    }
+
 }

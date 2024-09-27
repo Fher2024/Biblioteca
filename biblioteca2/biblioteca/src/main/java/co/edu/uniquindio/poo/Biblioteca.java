@@ -145,4 +145,27 @@ public class Biblioteca {
         return acumulador;
     }
 
+    /*
+   * Método que permite consultar libro por medio de un codigo
+   */
+        public boolean consultarLibroPorCodigo(String codigo) {
+        boolean centinela = false;
+        for (Libro libro : libros) {
+            if (libro.getCodigo().equals(codigo)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+ /*
+   * Método que permite calcular ell total del dienro recaudado
+   */
+    public double totalDineroRecaudo() {
+        double total = 0;
+        for (Prestamo prestamo : prestamos) {
+            total += prestamo.calcularCosto();
+        }
+        return total;
+    }
+
 }
